@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TEST</title>
+    <!-- <link href="css/reset.css" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12">
+                    <div id="navbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Plugin</a></li>
+                            <li class="active"><a href="mini-templating.html">Latin Test</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12">
+                    <h1>Знаете ли вы латинские крылатые выражения?</h1>
+                    <p>Вплоть до 20-го века непременным атрибутом образованного человека считалось знание латинского языка. Он входил в обязательную учебную программу гимназий, лицеев и университетов. Сейчас этот язык остался популярным только у медиков, филологов да историков древнего Рима. Впрочем, знание крылатых фраз на латыни позволяет блеснуть эрудицией каждому, так что кое-что вы наверняка знаете. Проверим?</p>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+<main>
+    <div class="container">
+        <div class="row row-header">
+            <div class="col-xs-12 test-plaseholder">
+                <script type="text/html" id="test">
+                    <% for (var i = 0; i < data.length; i++) { %>
+                        <h3><%= data[i].question %></h3>
+                        <% for (var j = 0; j < data[i].answers.length; j++) { %>
+                            <div class="checkbox"><label><input type="checkbox" value=""><%= data[i].answers[j] %></label>
+                        <% }; %>
+                    <% }; %>
+                </script>
+            </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success btn-lg"> Ответить </button>
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+    </div>
+
+
+
+    <!-- <p><%= data[i].answers %></p> -->
+</main>
+
+<script src="js/tmpl.js" ></script>
+<script src="js/js.js" ></script>
+</body>
+
+</html>
